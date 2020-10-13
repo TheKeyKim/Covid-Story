@@ -1,7 +1,7 @@
 # Covid-Story
 
-## Main Game
+##   Main Game
 
-## Mini Game 1
+##   Mini Game 1
 
-## Mini Game 2
+##   Mini Game 2
