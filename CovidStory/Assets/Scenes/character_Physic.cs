@@ -6,6 +6,7 @@ public class character_Physic : MonoBehaviour
 {
     // Start is called before the first frame update
     public Vector2 speed = new Vector2(50,50);
+    public float xpos = 2.0f;
     private Vector2 movement;
 
     Rigidbody2D player;
@@ -19,11 +20,13 @@ public class character_Physic : MonoBehaviour
     void Update()
     {
         //speed = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D > ().velocity;
-        movement = speed;
+        movement = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D > ().position;
+        player.transform.position = new Vector2(movement.x+xpos, -1.1f);
     }
 
     void FixedUpdate()
     {
-        player.velocity = movement;
+        movement = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D > ().position;
+        player.transform.position = new Vector2(movement.x+xpos, -1.1f);
     }
 }
