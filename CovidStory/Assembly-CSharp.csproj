@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scenes\camera.cs" />
      <Compile Include="Assets\Scenes\character_Physic.cs" />
      <Compile Include="Assets\Scenes\effect.cs" />
+     <Compile Include="Assets\Scenes\Enemy.cs" />
      <Compile Include="Assets\Scenes\Player.cs" />
      <Compile Include="Assets\Scenes\target.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">

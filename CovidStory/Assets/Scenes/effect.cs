@@ -22,7 +22,13 @@ public class effect : MonoBehaviour
         int prestate = animator.GetInteger("State");
         state = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().GetInteger("State");
         animator.SetInteger("State", state);
+
         if(prestate != state && prestate ==0 && state == 1){
+            done = true;
+            animator.SetBool("done",done);
+        }
+        else if(prestate != state && state ==5){
+            Debug.Log(prestate+" "+state);
             done = true;
             animator.SetBool("done",done);
         }
@@ -30,6 +36,11 @@ public class effect : MonoBehaviour
             done = false;
             animator.SetBool("done",done);
         }
-        GetComponent<Transform>().position =  new Vector3(GameObject.FindGameObjectWithTag("Player").transform.position.x+xpos, ypos, 0);
+        if(animator.GetCurrentAnimatorStateInfo(0).IsName("SmashEffect")){
+            GetComponent<Transform>().position =  new Vector3(GameObject.FindGameObjectWithTag("Player").transform.position.x+xpos - 2, ypos-0.3f, 0);
+        }
+        else {
+            GetComponent<Transform>().position =  new Vector3(GameObject.FindGameObjectWithTag("Player").transform.position.x+xpos, ypos, 0);
+        }
     }
 }

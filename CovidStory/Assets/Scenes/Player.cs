@@ -54,11 +54,21 @@ public class Player : MonoBehaviour
             state = 1;
             GetComponent<Rigidbody2D>().AddForce(50*Vector2.up, ForceMode2D.Impulse);
         }
-        else if(state == 1 && r){
+        else if(state == 1 && l){
             state = 4;
+            GetComponent<Rigidbody2D>().AddForce(50*Vector2.up, ForceMode2D.Impulse);
+            // must be added  [ animator.SetBool("near_Note", ture); ]
+        }
+        else if((state == 1 || state == 4) && r){
+            state = 5;
+            GetComponent<Rigidbody2D>().AddForce(-50*Vector2.up, ForceMode2D.Impulse);
+            // must be added  [ animator.SetBool("near_Note", ture); ]
         }
         else if(animator.GetBool("attack") == true){
             animator.SetBool("attack", false);
+        }
+        else if(state == 4){
+            state = 1;
         }
     }
 }
