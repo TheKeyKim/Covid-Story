@@ -54,11 +54,14 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\jumpAttack.cs" />
-     <Compile Include="Assets\Scenes\camera.cs" />
-     <Compile Include="Assets\Scenes\character_Physic.cs" />
-     <Compile Include="Assets\Scenes\effect.cs" />
-     <Compile Include="Assets\Scenes\Player.cs" />
-     <Compile Include="Assets\Scenes\target.cs" />
+     <Compile Include="Assets\scripts\camera.cs" />
+     <Compile Include="Assets\scripts\character_Physic.cs" />
+     <Compile Include="Assets\scripts\effect.cs" />
+     <Compile Include="Assets\scripts\Enemy.cs" />
+     <Compile Include="Assets\scripts\Player.cs" />
+     <Compile Include="Assets\scripts\SoundManager.cs" />
+     <Compile Include="Assets\scripts\SpawnManager.cs" />
+     <Compile Include="Assets\scripts\target.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/2d/CovidStory/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
