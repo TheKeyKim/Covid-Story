@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
             animator.SetBool("meet_character", true);
         }
 
-        if (Mathf.Abs(r_xpos - GetComponent<Transform>().position.x) < 1.5f && GetComponent<Transform>().position.y == -0.8f) {
+        if (Mathf.Abs(r_xpos - GetComponent<Transform>().position.x) < 1.25f && GetComponent<Transform>().position.y == -0.8f) {
             hit = true;
             meet = true;
             animator.SetBool("meet_character", true);
@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour
             if(!sound_done) GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().hitSound();
             sound_done = true;
         }
-        if (Mathf.Abs(l_xpos - GetComponent<Transform>().position.x) < 1.5f && GetComponent<Transform>().position.y == 2.3f) {
+        if (Mathf.Abs(l_xpos - GetComponent<Transform>().position.x) < 1.25f && GetComponent<Transform>().position.y == 2.3f) {
             hit = true;
             meet = true;
             animator.SetBool("meet_character", true);
@@ -55,6 +55,7 @@ public class Enemy : MonoBehaviour
             if (hit) {
                 if (first) {
                     animator.SetBool("hit_success", true);
+                    GameObject.FindGameObjectWithTag("Combo").GetComponent<Combo>().combo++;
                     first = false;
                 }
                 time += Time.deltaTime;
@@ -70,6 +71,8 @@ public class Enemy : MonoBehaviour
                     Vector2 tmp = GetComponent<Transform>().position;
                     GetComponent<Transform>().position = new Vector2(tmp.x, tmp.y + 0.4f);
                     animator.SetBool("hit_success", false);
+                    GameObject.FindGameObjectWithTag("HP").GetComponent<HP>().counter++;
+                    GameObject.FindGameObjectWithTag("Combo").GetComponent<Combo>().combo = 0;
                     first = false;
                 }
                 time += Time.deltaTime;
